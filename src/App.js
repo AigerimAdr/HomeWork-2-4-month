@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+const Squares = () => {
+  const [color1, setColor1] = useState('red');
+  const [color2, setColor2] = useState('blue');
+
+  const SquareClick = (square) => {
+    if (square === 1) {
+      setColor1(color1 === 'red' ? 'blue' : 'red');
+    } else if (square === 2) {
+      setColor2(color2 === 'blue' ? 'red' : 'blue');
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div
+        style={{
+          width: '100px',
+          height: '100px',
+          backgroundColor: color1,
+          cursor: 'pointer',
+          marginBottom: '20px'
+        }}
+        onClick={() => SquareClick(1)}
+      ></div>
+      <div
+        style={{
+          width: '100px',
+          height: '100px',
+          backgroundColor: color2,
+          cursor: 'pointer',
+        }}
+        onClick={() => SquareClick(2)}
+      ></div>
     </div>
   );
-}
+};
 
-export default App;
+export default Squares;
