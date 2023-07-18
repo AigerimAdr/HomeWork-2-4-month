@@ -13,14 +13,13 @@ const Squares = () => {
   };
 
   return (
-    <div>
+    <div style={{display: 'flex', gap: '20px'}}>
       <div
         style={{
           width: '100px',
           height: '100px',
           backgroundColor: color1,
-          cursor: 'pointer',
-          marginBottom: '20px'
+          cursor: 'pointer'
         }}
         onClick={() => SquareClick(1)}
       ></div>
@@ -29,7 +28,7 @@ const Squares = () => {
           width: '100px',
           height: '100px',
           backgroundColor: color2,
-          cursor: 'pointer',
+          cursor: 'pointer'
         }}
         onClick={() => SquareClick(2)}
       ></div>
